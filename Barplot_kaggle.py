@@ -25,12 +25,11 @@ com = data.groupby(['Family','Num']).size().reset_index().rename(columns={0:'Cou
 #print com
 a = com.Family.unique()
 #ll = numpy.arange(501, 1000, 500)
-ll = 431500/500
+ll = 432000/4000
 #print ll
 
+labels = numpy.arange(4000, 432001, 4000)
 
-g = numpy.arange(500, 431501, 500)
-print len(g)
 for j in range(0,len(a)):
     a1 = com.loc[com['Family'] == a[j]].Num.tolist()
     # print(a1)
@@ -43,18 +42,16 @@ for j in range(0,len(a)):
 
     bb = []
     for i in range(0, ll):
-        c = aa.loc[(aa['A'] > 500 * i) & (aa['A'] <= 500 * (i + 1)), 'B'].sum()
+        c = aa.loc[(aa['A'] > 4000 * i) & (aa['A'] <= 4000 * (i + 1)), 'B'].sum()
         bb.append(c)
     #print len(bb)
-    plt.bar(g, bb, alpha=0.5)
+    plt.bar(numpy.arange(5, 113, 1), bb, alpha=0.5)
+
+
+    plt.xticks(numpy.arange(5.5, 113.5, 1), labels, rotation='vertical')
     plt.xlabel('Number')
     plt.ylabel('Count')
     plt.title(a[j] + ' Bar Plot')
     plt.ylim([0, 200])
-    plt.xlim([0, 432000])
+    plt.xlim([4, 114])
     plt.show()
-
-
-
-
-
