@@ -53,7 +53,7 @@ p4 = plt.bar(tt, bb[33:44], width,  bottom=np.array(bb[0:11])+np.array(bb[11:22]
 
 plt.xlabel('Length')
 plt.ylabel('Count')
-plt.title('Line chart of label\'s length')
+plt.title('Stacked Bar Chart of label\'s length')
 labels = ['51-100', '101-150', '151-200', '201-250', '251-300', '301-350', '351-400',
           '401-450', '451-500', '501-550', '551-600']
 plt.xticks(np.arange(5.25, 16.25, 1), labels, rotation=0)
